@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			{		
 				if (format[i + 1] == *array_f[j].id)
 				{
-					*array_f[j].fn(list);
+					array_f[j].fn(list);
 				}
 			}
 		}
