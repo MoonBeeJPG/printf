@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
 * _printf - function that produces output according to a format
 * @format: character string
@@ -30,9 +31,11 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == *array_f[j].id)
 				{
 					array_f[j].fn(list);
+					i++; /* problematico con %xx */
 				}
 			}
 		}
+
 		else
 			_putchar(format[i]);
 	}
@@ -41,9 +44,10 @@ int _printf(const char *format, ...)
 	return (0);
 }	
 
-void p_char(va_list list) /* complete?? */
+void p_char(va_list list)
 {
-	_putchar(va_arg(list, int));
+	char ch = (va_arg(list, int));
+	_putchar(ch);
 }
 
 void p_str(va_list list) 
@@ -54,6 +58,6 @@ void p_str(va_list list)
 
 	for (c = 0; str[c] != '\0'; c++)
 	{
-		_putchar(c);
+		_putchar(str[c]);
 	}
 }
