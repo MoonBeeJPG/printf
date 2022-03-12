@@ -13,5 +13,5 @@ int (*fn)(va_list list);
 
 int p_char(va_list list);
 int p_str(va_list list);
-
+int (*pr_selector(char)(va_list));
 #endif

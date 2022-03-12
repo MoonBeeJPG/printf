@@ -1,3 +1,8 @@
+#include "main.h"
+/**
+* p_char - print the char function
+* Return: char
+*/
 int p_char(va_list list)
 {
 	int ch_c = 0;
@@ -8,7 +13,10 @@ int p_char(va_list list)
 
 	return (ch_c);
 }
-
+/**
+* p_str - print the string function
+* Return: string
+*/
 int p_str(va_list list) 
 {
 	int c = 0;
