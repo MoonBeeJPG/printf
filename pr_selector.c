@@ -15,11 +15,11 @@ int (*pr_selector(char id))(va_list)
 	int j = 0;
 	
 	for (j = 0; *array_f[j].id != '\0'; j++)
-			{
-				if (id == *array_f[j].id)
-				{
-					return (array_f[j].fn);
-				}
-			}
+	{
+		if (id == *array_f[j].id)
+		{
+			return (array_f[j].fn);
+		}
+	}
 	return (NULL);
 }

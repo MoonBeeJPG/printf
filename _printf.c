@@ -20,26 +20,21 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	
-	for (i = 0; format != NULL && format[i] != '\0'; i++)
-	{	
-		for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
 		{
-			if (format[i] == '%')
-			{
-				pr_fn_sel = pr_selector(format[i + 1]);
-				pr_fn_sel(list);
-			}
-			else
-			{
-				write(1, &format[i], 1);
-				ch_c++;
-				_putchar(format[i]);
-				_putchar('.');
-			}
-		
+			pr_fn_sel = pr_selector(format[i + 1]);
+			ch_c += pr_fn_sel(list);
+			i++;
+		}
+		else
+		{
+			write(1, &format[i], 1);
+			ch_c++;
 		}
 	}
-	printf("%i", ch_c);
 	va_end(list);
+	printf("%d", ch_c);
 	return (ch_c);
 }
