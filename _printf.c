@@ -10,7 +10,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0, c = 0;
+	int i = 0, j = 0;
 	
 	comp array_f[] = {
 		{"c", p_char},
@@ -40,7 +40,9 @@ void p_char(va_list list); /* complete?? */
 
 void p_str(va_list list) 
 {
-	str = va_args(list, char);
+	int c = 0;
+
+	char *str = va_args(list, char);
 
 	for (c = 0; str[c] != '\0'; i++)
 	{
