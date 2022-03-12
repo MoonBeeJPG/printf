@@ -39,7 +39,8 @@ int _printf(const char *format, ...)
 
 		else
 		{
-			_putchar(format[i]);
+			putchar(format[i]);
+			printf(".");
 			ch_c++;
 		}
 	}
@@ -54,7 +55,8 @@ int p_char(va_list list)
 	int ch_c = 0;
 
 	char ch = (va_arg(list, int));
-	_putchar(ch);
+	putchar(ch);
+	printf(".");
 	ch_c++;
 
 	return (ch_c);
@@ -69,7 +71,8 @@ int p_str(va_list list)
 
 	for (c = 0; str[c] != '\0'; c++)
 	{
-		_putchar(str[c]);
+		putchar(str[c]);
+		printf(".");
 		ch_c++;
 	}
 
