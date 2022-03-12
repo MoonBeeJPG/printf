@@ -7,9 +7,9 @@
 int _printf(const char *format, ...)
 {
 	structure array_f[] = {
-				{"c", p_char},
-				{"s", p_str},
-				{"\0", NULL}
+		{"c", p_char},
+		{"s", p_str},
+		{"\0", NULL}
 	};
 	void fchar(va_list list);
 }
