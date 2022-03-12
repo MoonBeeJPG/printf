@@ -6,9 +6,9 @@
 */
 int _printf(const char *format, ...)
 {
-	structure arrayf[] = {
-				{"c", fchar},
-				{"s", fstring},
+	structure array_f[] = {
+				{"c", p_char},
+				{"s", p_str},
 				{"\0", NULL}
 	};
 
