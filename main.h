@@ -8,10 +8,10 @@ int _putchar(char c);
 typedef struct comp
 {
 char *id;
-void (*fn)(va_list list);
+int (*fn)(va_list list);
 } comp;
 
-void p_char(va_list list);
-void p_str(va_list list);
+int p_char(va_list list);
+int p_str(va_list list);
 
 #endif
