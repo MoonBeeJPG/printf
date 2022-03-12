@@ -10,6 +10,8 @@
 */
 int _printf(const char *format, ...)
 {
+	int i = 0, j = 0, c = 0;
+	
 	comp array_f[] = {
 		{"c", p_char},
 		{"s", p_str},
@@ -33,7 +35,7 @@ int _printf(const char *format, ...)
 
 void p_char(va_list list); /* complete?? */
 {
-	_putchar(va_args(list, char));
+	_putchar(va_arg(list, char));
 }
 
 void p_str(va_list list) 
