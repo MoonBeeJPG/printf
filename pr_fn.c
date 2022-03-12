@@ -43,17 +43,14 @@ int p_int(va_list list)
 {
     int ch_c = 0;
     int num = va_arg(list, int);	
-	char *str;
 
-	str = itos(num);
-	
+	str = itoc(num);
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
     	ch_c++;
 	}
-
-	free(str);
 
     return (ch_c);
 
@@ -70,6 +67,7 @@ char *itos(int num)
 	int digits, num_cp = num, rem, next_d;
 	char *n_str;
 
+	/*count digits*/
 	while (num_cp > 0)
 	{
 	num_cp /= 10;
@@ -84,8 +82,8 @@ char *itos(int num)
 		n_str[] = (next_d + '0');
 	}
 
-	n_str = rev_str(n_str);
-	return (n_str);
+
+	return(rev_str(n_str));
 }
 
 /**
@@ -110,11 +108,11 @@ char *rev_str(char *str)
 		return (NULL);
 
 	j--;
-	
+
 	for (i = 0; str[i] != '\0'; i++, j--)
 	{
 		dest[i] = str[j];
 	}
-	desd[i] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
