@@ -6,10 +6,10 @@
 */
 int _printf(const char *format, ...)
 {
-	structure arrayf[] = {
-				{"c", fchar},
-				{"s", fstring},
-				{"\0", NULL}
+	structure array_f[] = {
+		{"c", p_char},
+		{"s", p_str},
+		{"\0", NULL}
 	};
 	void fchar(va_list list);
 }
