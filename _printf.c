@@ -38,6 +38,6 @@ void p_char(va_list list); /* complete?? */
 
 void p_str(va_list list) 
 {
-	for (c = 0)
+	for (c = 0; )
 		_putchar(va_args(list, char))
 }
