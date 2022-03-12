@@ -31,12 +31,13 @@ int _printf(const char *format, ...)
 	}
 }	
 
-void p_char(va_list list);
+void p_char(va_list list); /* complete?? */
 {
-	_putchar
+	_putchar(va_args(list, char));
 }
 
-void p_str(va_list list)
+void p_str(va_list list) 
 {
-	_putchar(va_args(list, char))
+	for (c = 0)
+		_putchar(va_args(list, char))
 }
