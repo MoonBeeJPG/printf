@@ -7,7 +7,7 @@ int _putchar(char c);
 
 typedef struct comp
 {
-char id;
+char *id;
 void (*fn)(va_list list);
 } comp;
 
