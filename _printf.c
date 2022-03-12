@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 #include <stdio.h>
 #include <unistd.h>
 /**
@@ -24,8 +25,13 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	
+<<<<<<< HEAD
+	for (i = 0; format != NULL && format[i] != '\0'; i++)
+	{	
+=======
 	for (i = 0; format[i] != '\0'; i++)
 	{
+>>>>>>> 3c1680a20fa070dd836db4d81510f9b99e18255e
 		if (format[i] == '%')
 		{
 			for (j = 0; *array_f[j].id != '\0'; j++)
@@ -33,15 +39,21 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == *array_f[j].id)
 				{
 					ch_c += array_f[j].fn(list);
-					i++; /* problematico con %xx */
+					i++;
+				 /* problematico con %xx */
 				}
 			}
 		}
 
 		else
 		{
+<<<<<<< HEAD
+=======
 			write(1, &format[i], 1);
+>>>>>>> 3c1680a20fa070dd836db4d81510f9b99e18255e
 			ch_c++;
+			_putchar(format[i]);
+			_putchar('.');
 		}
 	}
 
@@ -57,7 +69,8 @@ int p_char(va_list list)
 	char ch = (va_arg(list, int));
 	_putchar(ch);
 	ch_c++;
-
+	_putchar('.');
+		
 	return (ch_c);
 }
 
@@ -71,6 +84,10 @@ int p_str(va_list list)
 	for (c = 0; str[c] != '\0'; c++)
 	{
 		_putchar(str[c]);
+<<<<<<< HEAD
+		_putchar('.');
+=======
+>>>>>>> 3c1680a20fa070dd836db4d81510f9b99e18255e
 		ch_c++;
 	}
 
