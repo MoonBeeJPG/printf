@@ -40,6 +40,10 @@ void p_char(va_list list); /* complete?? */
 
 void p_str(va_list list) 
 {
-	for (c = 0; )
-		_putchar(va_args(list, char))
+	str = va_args(list, char);
+
+	for (c = 0; str[c] != '\0'; i++)
+	{
+		_putchar(c)
+	}
 }
