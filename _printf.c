@@ -11,5 +11,5 @@ int _printf(const char *format, ...)
 				{"s", p_str},
 				{"\0", NULL}
 	};
-
+	void fchar(va_list list);
 }
