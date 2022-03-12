@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 #include <stdio.h>
 /**
 * _printf - function that produces output according to a format
@@ -23,7 +24,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{	
 		if (format[i] == '%')
 		{
@@ -32,21 +33,21 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == *array_f[j].id)
 				{
 					ch_c += array_f[j].fn(list);
-					i++; /* problematico con %xx */
+					i++;
+				 /* problematico con %xx */
 				}
 			}
 		}
 
 		else
 		{
-			putchar(format[i]);
-			printf(".");
 			ch_c++;
+			_putchar(format[i]);
+			_putchar('.');
 		}
 	}
 
 	va_end(list);
-	printf("%d", ch_c);
 	return (ch_c);
 }	
 
@@ -55,10 +56,10 @@ int p_char(va_list list)
 	int ch_c = 0;
 
 	char ch = (va_arg(list, int));
-	putchar(ch);
-	printf(".");
+	_putchar(ch);
 	ch_c++;
-
+	_putchar('.');
+		
 	return (ch_c);
 }
 
@@ -71,8 +72,8 @@ int p_str(va_list list)
 
 	for (c = 0; str[c] != '\0'; c++)
 	{
-		putchar(str[c]);
-		printf(".");
+		_putchar(str[c]);
+		_putchar('.');
 		ch_c++;
 	}
 
