@@ -3,13 +3,40 @@
 * _printf - function that produces output according to a format
 * @format: character string
 * Return: number of characters printed
+*
+* comp: structure for stroing comparator and functions
+* id: identifier charater for comparing agnst %x
+* fn: functions pointers
 */
 int _printf(const char *format, ...)
 {
-	structure array_f[] = {
+	comp array_f[] = {
 		{"c", p_char},
 		{"s", p_str},
 		{"\0", NULL}
 	};
-	void fchar(va_list list);
+
+	for (i = 0; format[i] != '\0'; i++)
+	{	
+		if (format[i] == '%')
+		{
+			for (j = 0; *array_f[j].id != '\0'; j++)
+			{		
+				if (format[i + 1] == *array_f[j].id)
+				{
+					*array_f[j].fn(list);
+				}
+			}
+		}
+	}
+}	
+
+void p_char(va_list list);
+{
+	_putchar
+}
+
+void p_str(va_list list)
+{
+	_putchar(va_args(list, char))
 }
