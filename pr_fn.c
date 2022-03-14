@@ -11,7 +11,7 @@ int p_char(va_list list)
 
 	_putchar(ch);
 	ch_c++;
-
+	
 	return (ch_c);
 }
 
