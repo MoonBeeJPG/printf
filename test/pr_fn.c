@@ -9,11 +9,8 @@ int p_char(va_list list)
 	int ch_c = 0;
 	char ch = va_arg(list, int);
 
-	while (ch != '\0')
-	{
-		_putchar(ch);
-		ch_c++;
-	}
+	_putchar(ch);
+	ch_c++;
 	
 	return (ch_c);
 }
@@ -47,16 +44,14 @@ int p_str(va_list list)
 */
 int p_int(va_list list)
 {
-	int i = 0, ch_c = 0;
+	int ch_c = 0;
 	int num = va_arg(list, int);
 
 	char *str = itos(num);
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_putchar(str[i]);
-		ch_c++;
-	}
+	_putchar(str);
+	ch_c++;
+	
 	return (ch_c);
 }
 
@@ -76,8 +71,8 @@ char *itos(int num)
 	/*count digits*/
 	while (num_cp > 0)
 	{
-		num_cp /= 10;
-		digits++;
+	num_cp /= 10;
+	digits++;
 	}
 
 	n_str = malloc((digits + 1) * sizeof(char));
@@ -87,6 +82,8 @@ char *itos(int num)
 		next_d = rem % 10;
 		n_str[1] = (next_d + '0');
 	}
+
+
 	return (rev_str(n_str));
 }
 /**
@@ -99,7 +96,7 @@ char *rev_str(char *str)
 	int i, j = 0;
 	char *dest;
 
-	for (j = 0; str[j] != '\0'; j++)
+	while (str[j] != '\0')
 	{
 		j++;
 	}
