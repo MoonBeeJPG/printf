@@ -42,10 +42,9 @@ int p_str(va_list list)
 */
 int p_mod(va_list list)
 {
-	int m = 0, ch_c = 0;
-	char module;
-
-	module = va_arg(list, char);
+	int ch_c = 0;
+	
+	char module = va_arg(list, int);
 	
 	_putchar(module);
 	ch_c++;
@@ -60,13 +59,16 @@ int p_mod(va_list list)
 */
 int p_int(va_list list)
 {
-	int ch_c = 0;
+	int i = 0, ch_c = 0;
 	int num = va_arg(list, int);
 
 	char *str = itos(num);
 
-	_putchar(str);
-	ch_c++;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+		ch_c++;
+	}
 	
 	return (ch_c);
 }

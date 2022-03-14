@@ -33,7 +33,7 @@ int output(int a, int b)
  */
 int main(void)
 {
-<<<<<<< HEAD
+
 	int a, b, cont = 0;
 	BLUE;
 	printf("\nTEST WITHOUT ARGUMENTS:\n\n");
@@ -300,12 +300,10 @@ int main(void)
 		RESET;
 	}
 	return (cont);
-=======
 	printf("");
 	_printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
 	return (0);	
->>>>>>> d91a2ea1e78b760772de81045b2ae9379afcfe18
 }
