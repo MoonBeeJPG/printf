@@ -49,7 +49,8 @@ int p_int(va_list list)
 	int i = 0, ch_c = 0;
 	int num = va_arg(list, int);
 
-	char *str = itos(num);
+	char *str = malloc(1024);
+	str = itos(num);
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
