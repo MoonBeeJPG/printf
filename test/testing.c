@@ -79,10 +79,10 @@ int main(void)
 	printf("\n---------------\n");
 	printf("Test 6: double module, identif, module; no args");
 	printf("\nexpected: ");
-	a = printf("%%s%..");
+	a = printf("%%s%");
 	printf("\nobtained: ");
 	fflush(stdout);
-	b = _printf("%%s%..");
+	b = _printf("%%s%");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
 	printf("Test 7: double module, identf; No args");
