@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	int (*pr_fn_sel)(va_list);
 
 	va_start(list, format);
-	
+
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -35,6 +35,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(list);
-	printf("%d", ch_c);
 	return (ch_c);
 }
