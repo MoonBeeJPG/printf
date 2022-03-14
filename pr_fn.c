@@ -53,6 +53,7 @@ int p_int(va_list list)
 	{
 		_putchar(str[i]);
 		ch_c++;
+		i++;
 	}
 	return (ch_c);
 }
