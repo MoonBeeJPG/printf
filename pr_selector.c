@@ -12,6 +12,7 @@ int (*pr_selector(char id))(va_list)
 		{"s", p_str},
 		{"i", p_int},
 		{"%", p_mod},
+		{"b", p_bin},
 		{"\0", NULL}
 	};
 
