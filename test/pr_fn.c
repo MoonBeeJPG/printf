@@ -38,6 +38,7 @@ int p_str(va_list list)
 	}
 	return (ch_c);
 }
+
 /**
 * p_int - Print the integral function
 * @list: list
