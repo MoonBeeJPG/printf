@@ -32,20 +32,6 @@ int p_str(va_list list)
 	return (ch_c);
 }
 /**
-* p_dec - Print the decimal function
-* Return: Number of characters printed
-*/
-int p_dec(va_list list)
-{
-    int ch_c = 0;
-
-    char dec = va_arg(list, int);
-    _putchar(dec);
-    ch_c++;
-
-    return (ch_c);
-}
-/**
 * p_int - Print the integral function
 * Return: Number of characters printed
 */
