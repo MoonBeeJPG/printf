@@ -79,10 +79,10 @@ int main(void)
 	printf("\n---------------\n");
 	printf("Test 6: double module, identif, module; no args");
 	printf("\nexpected: ");
-	a = printf("%%s%");
+	a = printf("%%s%..");
 	printf("\nobtained: ");
 	fflush(stdout);
-	b = _printf("%%s%");
+	b = _printf("%%s%..");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
 	printf("Test 7: double module, identf; No args");
@@ -227,8 +227,8 @@ int main(void)
 	b = _printf("D%s Ellia%s", "enis", "s");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 24");
-	printf("\nexpected: mod id mod, right arg");
+	printf("Test 24: mod id mod; right arg");
+	printf("\nexpected: ");
 	a = printf("%s%", "sabeloko");
 	printf("\nobtained: ");
 	fflush(stdout);

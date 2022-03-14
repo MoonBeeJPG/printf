@@ -59,7 +59,9 @@ int p_int(va_list list)
 	return (ch_c);
 }
 /**
- *
+ * p_mod - Print % as identifier
+ * @list: list
+ * Return: Number of characters printed
  */
 int p_mod(va_list list)
 {
@@ -71,7 +73,21 @@ int p_mod(va_list list)
 	
 	return (ch_c);
 }
+/**
+* p_unk - Print unknowns identifiers
+* @list: list
+* Return: Number of characters printed
+*/
+int p_unk(va_list list)
+{
+	int ch_c = 0;
+	(void)list;
 
+	ch_c++;
+	ch_c++;
+
+	return (ch_c);
+}
 /* ------- UTILITIES ------ */
 
 /**
