@@ -62,6 +62,13 @@ int p_int(va_list list)
 
 	return (ch_c);
 }
+/**
+ *
+ */
+int p_mod(va_list list)
+{
+	_putchar("%");
+}
 
 /* ------- UTILITIES ------ */
 
