@@ -11,7 +11,7 @@ int p_char(va_list list)
 
 	_putchar(ch);
 	ch_c++;
-		
+
 	return (ch_c);
 }
 
@@ -29,7 +29,7 @@ int p_str(va_list list)
 	char *str = va_arg(list, char *);
 
 	if (str == NULL)
-		return ('\0');
+		str = ("null");		
 	for (c = 0; str[c] != '\0'; c++)
 	{
 		ch_c++;
@@ -56,7 +56,7 @@ int p_int(va_list list)
 		_putchar(str[i]);
 		ch_c++;
 	}
-	
+
 	return (ch_c);
 }
 
