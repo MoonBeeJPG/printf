@@ -1,60 +1,90 @@
-#include "main.h"
-/* ------- UTILITIES ------ */
-
+include "main.h"
 /**
- * itos - Converts int to string
- * @num: number to convert to string
- *
- * Return: pointer to number string
- */
-char *itos(int num)
+* p_char - Print the char function
+* @list: list
+* Return: Number of characters printed
+*/
+int p_char(va_list list)
 {
-	int digits, num_cp = num, rem, next_d;
-	char *n_str;
+    int ch_c = 0;
+    char ch = va_arg(list, int);
 
-	/*count digits*/
-	while (num_cp > 0)
-	{
-	num_cp /= 10;
-	digits++;
-	}
+    _putchar(ch);
+    ch_c++;
 
-	n_str = malloc((digits + 1) * sizeof(char));
-
-	for (rem = num; rem != 0; rem /= 10)
-	{
-		next_d = rem % 10;
-		n_str[1] = (next_d + '0');
-	}
-
-
-	return (rev_str(n_str));
+    return (ch_c);
 }
 /**
- * rev_str - reverses string (null char at the end)
- * @str: string to be reversed
- * Return: pointer to reversed string
- */
-char *rev_str(char *str)
+* p_str - Print the string function
+* @list: list
+* Return: Number of characters printed
+*/
+int p_str(va_list list)
 {
-	int i, j = 0;
-	char *dest;
+    int c = 0;
+    int ch_c = 0;
 
-	while (str[j] != '\0')
-	{
-		j++;
-	}
+    char *str = va_arg(list, char *);
 
-	dest = malloc(j * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
+    if (str == NULL)
+        str = "(null)";
+    if (str)
+    {
+        for (c = 0; str[c] != '\0'; c++)
+        {
+            ch_c++;
+            _putchar(str[c]);
+        }
+    }
+    return (ch_c);
+}
+/**
+* p_int - Print the integral function
+* @list: list
+* Return: Number of characters printed
+*/
+int p_int(va_list list)
+{
+    int i = 0, ch_c = 0;
+    int num = va_arg(list, int);
 
-	j--;
+    char *str = itos(num);
 
-	for (i = 0; str[i] != '\0'; i++, j--)
-	{
-		dest[i] = str[j];
-	}
-	dest[i] = '\0';
-	return (dest);
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        _putchar(str[i]);
+        ch_c++;
+    }
+
+    return (ch_c);
+}
+/**
+ * p_mod - Print % as identifier
+ * @list: list
+ * Return: Number of characters printed
+ */
+int p_mod(va_list list)
+{
+    int ch_c = 0;
+    (void)list;
+
+    _putchar('%');
+    ch_c++;
+
+    return (ch_c);
+}
+/**
+* p_unk - Print unknowns identifiers
+* @list: list
+* Return: Number of characters printed
+*/
+int p_unk(va_list list)
+{
+    int ch_c = 0;
+    (void)list;
+
+    ch_c++;
+    ch_c++;
+
+    return (ch_c);
 }
