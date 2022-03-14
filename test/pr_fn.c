@@ -69,7 +69,7 @@ int p_mod(va_list list)
 {
 	int ch_c;
 
-	void list;
+	(void)list;
 	_putchar('%');
 	ch_c++;
 	return (ch_c);
