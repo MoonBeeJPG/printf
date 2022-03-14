@@ -40,7 +40,27 @@ int p_str(va_list list)
 	}
 	return (ch_c);
 }
+<<<<<<< HEAD
+/**
+* p_mod - Print the module
+* @list: list
+* Return: Number of characters printed
+*/
+int p_mod(va_list list)
+{
+	int ch_c = 0;
+	int module;
 
+	module = va_arg(list, int);
+
+	_putchar(module);
+	ch_c++;
+
+	return (ch_c);
+}
+=======
+
+>>>>>>> b2cc6e2593ce0123be19928eb41c1f13db962cdb
 
 /**
 * p_int - Print the integral function
