@@ -24,5 +24,6 @@ int p_str(va_list list);
 char *itos(int);
 int p_int(va_list list);
 char *rev_str(char *);
+int p_mod(va_list list);
 int (*pr_selector(char))(va_list);
 #endif
