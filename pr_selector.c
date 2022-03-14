@@ -24,5 +24,7 @@ int (*pr_selector(char id))(va_list)
 			return (array_f[j].fn);
 		}
 	}
-	return (NULL);
+	_putchar('%');
+	_putchar(id);
+	return (p_unk);
 }
