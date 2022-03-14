@@ -63,11 +63,12 @@ int p_int(va_list list)
  */
 int p_mod(va_list list)
 {
-	int ch_c;
-
+	int ch_c = 0;
 	(void)list;
+	
 	_putchar('%');
 	ch_c++;
+	
 	return (ch_c);
 }
 
