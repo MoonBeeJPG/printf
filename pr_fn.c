@@ -14,8 +14,6 @@ int p_char(va_list list)
 	
 	return (ch_c);
 }
-
-
 /**
 * p_str - Print the string function
 * @list: list
@@ -40,8 +38,6 @@ int p_str(va_list list)
 	}
 	return (ch_c);
 }
-
-
 /**
 * p_int - Print the integral function
 * @list: list
@@ -67,7 +63,13 @@ int p_int(va_list list)
  */
 int p_mod(va_list list)
 {
-	_putchar("%");
+	int ch_c = 0;
+	(void)list;
+	
+	_putchar('%');
+	ch_c++;
+	
+	return (ch_c);
 }
 
 /* ------- UTILITIES ------ */
