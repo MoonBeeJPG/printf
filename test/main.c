@@ -10,6 +10,7 @@
 #define RESET printf("\033[0m");
 /**
  * output - check expected and obtained code.
+ * @_printf: print
  * Return: 0 for success, 1 for error.
  */
 int output(int a, int b)
@@ -29,6 +30,7 @@ int output(int a, int b)
 }
 /**
  * main - test collection for _printf.
+ * @_printf: print
  * Return: nothing
  */
 int main(void)
