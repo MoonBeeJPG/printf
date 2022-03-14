@@ -47,19 +47,33 @@ int p_str(va_list list)
 */
 int p_int(va_list list)
 {
+<<<<<<< HEAD
+    int ch_c = 0, i;
+    int num = va_arg(list, int);
+	char *str;
+
+	str = itos(num);
+=======
 	int i = 0, ch_c = 0;
 	int num = va_arg(list, int);
 
 	char *str = itos(num);
+>>>>>>> 739b3d8230c37a58d691ea249caa521857860a14
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
 		ch_c++;
 	}
+<<<<<<< HEAD
+
+    return (ch_c);
+}
+=======
 	return (ch_c);
 }
 
+>>>>>>> 739b3d8230c37a58d691ea249caa521857860a14
 /* ------- UTILITIES ------ */
 
 /**
@@ -70,7 +84,7 @@ int p_int(va_list list)
  */
 char *itos(int num)
 {
-	int digits, num_cp = num, rem, next_d;
+	int i, digits, num_cp = num, rem, next_d;
 	char *n_str;
 
 	/*count digits*/
@@ -82,12 +96,20 @@ char *itos(int num)
 
 	n_str = malloc((digits + 1) * sizeof(char));
 
-	for (rem = num; rem != 0; rem /= 10)
+	for (i = 0, rem = num; rem != 0; rem /= 10, i++)
 	{
 		next_d = rem % 10;
+<<<<<<< HEAD
+		n_str[i] = (next_d + '0');
+	}
+
+	n_str[i] = '\0';
+	return(rev_str(n_str));
+=======
 		n_str[1] = (next_d + '0');
 	}
 	return (rev_str(n_str));
+>>>>>>> 739b3d8230c37a58d691ea249caa521857860a14
 }
 /**
  * rev_str - reverses string (null char at the end)
@@ -106,7 +128,9 @@ char *rev_str(char *str)
 
 	dest = malloc(j * sizeof(char));
 	if (dest == NULL)
+	{
 		return (NULL);
+	}
 
 	j--;
 
