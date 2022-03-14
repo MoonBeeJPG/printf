@@ -28,13 +28,19 @@ int p_str(va_list list)
 
 	char *str = va_arg(list, char *);
 
-	for (c = 0; str[c] != '\0'; c++)
+	if (str == NULL)
+		str = "(null)";
+	if (str)
 	{
-		ch_c++;
-		_putchar(str[c]);
+		for (c = 0; str[c] != '\0'; c++)
+		{
+			ch_c++;
+			_putchar(str[c]);
+		}
 	}
 	return (ch_c);
 }
+<<<<<<< HEAD
 /**
 * p_mod - Print the module
 * @list: list
@@ -52,6 +58,9 @@ int p_mod(va_list list)
 
 	return (ch_c);
 }
+=======
+
+>>>>>>> b2cc6e2593ce0123be19928eb41c1f13db962cdb
 
 /**
 * p_int - Print the integral function
@@ -70,7 +79,19 @@ int p_int(va_list list)
 		_putchar(str[i]);
 		ch_c++;
 	}
-	
+
+	return (ch_c);
+}
+/**
+ *
+ */
+int p_mod(va_list list)
+{
+	int ch_c;
+
+	void list;
+	_putchar('%');
+	ch_c++;
 	return (ch_c);
 }
 
