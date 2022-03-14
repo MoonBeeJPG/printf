@@ -37,7 +37,7 @@ int main(void)
 	BLUE;
 	printf("\nTEST WITHOUT ARGUMENTS:\n\n");
 	RESET;
-	printf("Test 1");
+	printf("Test 1: string lit");
 	printf("\nexpected: ");
 	a = printf("Buenas Noches America");
 	printf("\nobtained: ");
@@ -45,7 +45,7 @@ int main(void)
 	b = _printf("Buenas Noches America");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 2");
+	printf("Test 2: Lonely space");
 	printf("\nexpected: ");
 	a = printf(" ");
 	printf("\nobtained: ");
@@ -53,7 +53,7 @@ int main(void)
 	b = _printf(" ");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 3");
+	printf("Test 3: empty str");
 	printf("\nexpected: ");
 	a = printf("");
 	printf("\nobtained: ");
@@ -61,7 +61,7 @@ int main(void)
 	b = _printf("");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 4");
+	printf("Test 4: NULL string");
 	printf("\nexpected: ");
 	a = printf(NULL);
 	printf("\nobtained: ");
@@ -69,7 +69,7 @@ int main(void)
 	b = _printf(NULL);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 5");
+	printf("Test 5: double module, no args");
 	printf("\nexpected: ");
 	a = printf("%%");
 	printf("\nobtained: ");
@@ -77,7 +77,7 @@ int main(void)
 	b = _printf("%%");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 6");
+	printf("Test 6: double module, identif, module; no args");
 	printf("\nexpected: ");
 	a = printf("%%s%");
 	printf("\nobtained: ");
@@ -85,7 +85,7 @@ int main(void)
 	b = _printf("%%s%");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 7");
+	printf("Test 7: double module, identf; No args");
 	printf("\nexpected: ");
 	a = printf("%%s");
 	printf("\nobtained: ");
@@ -93,7 +93,7 @@ int main(void)
 	b = _printf("%%s");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 8");
+	printf("Test 8: char, doublemodule, identif, double module, double identif; No args");
 	printf("\nexpected: ");
 	a = printf("s%%s%%cc");
 	printf("\nobtained: ");
@@ -101,7 +101,7 @@ int main(void)
 	b = _printf("s%%s%%cc");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 9");
+	printf("Test 9: lots of modules, unknown indentf (k); No args");
 	printf("\nexpected: ");
 	a = printf("%%s%%r%1buelaaaaaas%%s%%%%%%%%%%sali de %k");
 	printf("\nobtained: ");
@@ -109,7 +109,7 @@ int main(void)
 	b = _printf("%%s%%r%1buelaaaaaas%%s%%%%%%%%%%sali de %k");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 10");
+	printf("Test 10: unknown identfs, &&, No args");
 	printf("\nexpected: ");
 	a = printf("%N&&S%%s%%ID%%");
 	printf("\nobtained: ");
@@ -117,7 +117,7 @@ int main(void)
 	b = _printf("%N&&S%%s%%ID%%");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 11");
+	printf("Test 11: NULL ??");
 	printf("\nexpected: ");
 	a = printf(NULL);
 	printf("\nobtained: ");
@@ -128,7 +128,7 @@ int main(void)
 	BLUE;
 	printf("\nTEST USING %%c SPECIFIER:\n\n");
 	RESET;
-	printf("Test 12");
+	printf("Test 12: double mod, identf, mod, id; 1 arg");
 	printf("\nexpected: ");
 	a = printf("%%c%c", 'B');
 	printf("obtained: ");
@@ -136,7 +136,7 @@ int main(void)
 	b = _printf("%%c%c", 'B');
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 13");
+	printf("Test 13: one char, one arg");
 	printf("\nexpected: ");
 	a = printf("Comiend%c oreja af", 'o');
 	printf("\nobtained: ");
@@ -144,7 +144,7 @@ int main(void)
 	b = _printf("Comiend%c oreja af", 'o');
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 14");
+	printf("Test 14: four mods, four id, four args");
 	printf("\nexpected: ");
 	a = printf("%c%c%c%c", 'c', 'a', 'c', 'a');
 	printf("\nobtained: ");
@@ -152,7 +152,7 @@ int main(void)
 	b = _printf("%c%c%c%c", 'c', 'a', 'c', 'a');
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 15");
+	printf("Test 15: double mod, idntf, mod, id, dobuel mod, id; wrong arg type (int)");
 	printf("\nexpected: ");
 	a = printf("%%c%c%%c", 90);
 	printf("\nobtained: ");
@@ -160,7 +160,7 @@ int main(void)
 	b = _printf("%%c%c%%c", 90);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 16");
+	printf("Test 16: mod, id, string; wrong arg (int)");
 	printf("\nexpected: ");
 	a = printf("%cantidad inecesaria de texto", 40);
 	printf("\nobtained: ");
@@ -168,7 +168,7 @@ int main(void)
 	b =_printf("%cantidad inecesaria de texto", 40);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 17");
+	printf("Test 17 mod mod mod mod id mod mod id mod id; wrong type (int), extra arg NULL");
 	printf("\nexpected: ");
 	a = printf("%%%%c%%c%c", 90, NULL);
 	printf("\nobtained: ");
@@ -176,7 +176,7 @@ int main(void)
 	b = _printf("%%%%c%%c%c", 90, NULL);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 18");
+	printf("Test 18: mod id; NULL arg");
 	printf("\nexpected: ");
 	a = printf("%c", NULL);
 	printf("\nobtained: ");
@@ -187,7 +187,7 @@ int main(void)
 	BLUE
 		printf("\nTEST USING %%s SPECIFIER:\n");
 	RESET;
-	printf("Test 19");
+	printf("Test 19: print string ending in %");
 	printf("\nexpected: ");
 	a = printf("TENGO TREMENDO %s", "CALOOOOOOOOOOR%");
 	printf("\nobtained: ");
@@ -195,7 +195,7 @@ int main(void)
 	b = _printf("TENGO TREMENDO %s", "CALOOOOOOOOOOR%");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 20");
+	printf("Test 20: mod id (str); strring with mods");
 	printf("\nexpected: ");
 	a = printf("%s", "Perfe%k%t%o%");
 	printf("\nobtained: ");
@@ -203,7 +203,7 @@ int main(void)
 	b = _printf("%s", "Perfe%k%t%o%");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 21");
+	printf("Test 21: mod mod mod id mod mod mod; right args (str)");
 	printf("\nexpected: ");
 	a = printf("%%%s%%%", "No me quiero ir Sr. Stark :(");
 	printf("\nobtained: ");
@@ -211,7 +211,7 @@ int main(void)
 	b = _printf("%%%s%%%", "No me quiero ir Sr. Stark :(");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 22");
+	printf("Test 22: string char char char car string");
 	printf("\nexpected: ");
 	a = printf("%s%c%c%c%c%s", "Pan ", 'c', 'a', 'c', 'a', " Pan");
 	printf("\nobtained: ");
@@ -219,7 +219,7 @@ int main(void)
 	b = _printf("%s%c%c%c%c%s", "Pan ", 'c', 'a', 'c', 'a', " Pan");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 23");
+	printf("Test 23: string string; right args");
 	printf("\nexpected: ");
 	a = printf("D%s Ellia%s", "enis", "s");
 	printf("\nobtained: ");
@@ -228,14 +228,14 @@ int main(void)
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
 	printf("Test 24");
-	printf("\nexpected: ");
+	printf("\nexpected: mod id mod, right arg");
 	a = printf("%s%", "sabeloko");
 	printf("\nobtained: ");
 	fflush(stdout);
 	b = _printf("%s%", "sabeloko");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 25");
+	printf("Test 25: null string arg");
 	printf("\nexpected: ");
 	a = printf("%s", NULL);
 	printf("\nobtained: ");
@@ -243,7 +243,7 @@ int main(void)
 	b = _printf("%s", NULL);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 26");
+	printf("Test 26: char char string nul args");
 	printf("\nexpected: ");
 	a = printf("Le dicen %c%c la rompe corazones, %s %s", 'l', 'a', "falsas", NULL);
 	printf("\nobtained: ");
@@ -254,7 +254,7 @@ int main(void)
 	BLUE;
 	printf("\nTEST USING %%d or %%i SPECIFIER:\n");
 	RESET;
-	printf("Test 27");
+	printf("Test 27: int; ritght arg");
 	printf("\nexpected: ");
 	a = printf("%i", 0);
 	printf("\nobtained: ");
@@ -262,7 +262,7 @@ int main(void)
 	b = _printf("%i", 0);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 28");
+	printf("Test 28: int max arg");
 	printf("\nexpected: ");
 	a = printf("%i", INT_MAX);
 	printf("\nobtained: ");
@@ -270,7 +270,7 @@ int main(void)
 	b = _printf("%i", INT_MAX);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 29");
+	printf("Test 29: int min arg");
 	printf("\nexpected: ");
 	a = printf("%i", INT_MIN);
 	printf("\nobtained: ");
@@ -278,7 +278,7 @@ int main(void)
 	b = _printf("%i", INT_MIN);
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
-	printf("Test 30");
+	printf("Test 30: operations!!!!! in args");
 	printf("\nexpected: ");
 	a = printf("%d %d", INT_MIN + 34, INT_MAX - 33);
 	printf("\nobtained: ");
