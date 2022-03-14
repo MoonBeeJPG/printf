@@ -35,6 +35,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(list);
-	printf("%d", ch_c);
 	return (ch_c);
 }
