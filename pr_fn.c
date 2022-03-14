@@ -29,7 +29,7 @@ int p_str(va_list list)
 	char *str = va_arg(list, char *);
 
 	if (str == NULL)
-		str = ("null");
+		str = "(null)";
 	if (str)
 	{
 		for (c = 0; str[c] != '\0'; c++)
