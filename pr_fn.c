@@ -9,11 +9,9 @@ int p_char(va_list list)
 	int ch_c = 0;
 	char ch = va_arg(list, int);
 
-	while (ch != '\0')
-	{
-		_putchar(ch);
-		ch_c++;
-	}
+	_putchar(ch);
+	ch_c++;
+
 
 	return (ch_c);
 }
