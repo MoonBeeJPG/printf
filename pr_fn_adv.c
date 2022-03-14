@@ -13,7 +13,7 @@ int p_bin(va_list list)
 	if (num == 0)
 	{
 		_putchar(0);
-		return (1);
+		return (-1);
 	}
 	num = var;
 
