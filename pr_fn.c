@@ -29,11 +29,14 @@ int p_str(va_list list)
 	char *str = va_arg(list, char *);
 
 	if (str == NULL)
-		str = ("null");		
-	for (c = 0; str[c] != '\0'; c++)
+		str = ("null");
+	if (str)
 	{
-		ch_c++;
-		_putchar(str[c]);
+		for (c = 0; str[c] != '\0'; c++)
+		{
+			ch_c++;
+			_putchar(str[c]);
+		}
 	}
 	return (ch_c);
 }
