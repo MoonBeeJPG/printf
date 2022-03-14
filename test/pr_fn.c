@@ -9,11 +9,8 @@ int p_char(va_list list)
 	int ch_c = 0;
 	char ch = va_arg(list, int);
 
-	while (ch != NULL)
-	{
-		_putchar(ch);
-		ch_c++;
-	}
+	_putchar(ch);
+	ch_c++;
 	
 	return (ch_c);
 }
@@ -38,7 +35,23 @@ int p_str(va_list list)
 	}
 	return (ch_c);
 }
+/**
+* p_mod - Print the module
+* @list: list
+* Return: Number of characters printed
+*/
+int p_mod(va_list list)
+{
+	int m = 0, ch_c = 0;
+	char module;
 
+	module = va_arg(list, char);
+	
+	_putchar(module);
+	ch_c++;
+
+	return (ch_c);
+}
 
 /**
 * p_int - Print the integral function
