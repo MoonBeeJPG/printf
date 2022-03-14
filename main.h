@@ -8,6 +8,11 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 
+/**
+ * struct comp - structure for the arguments and functions
+ * @id: All the arguments
+ * @fn: Pointers to all the functions
+ */
 typedef struct comp
 {
 char *id;
