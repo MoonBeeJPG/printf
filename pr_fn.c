@@ -28,6 +28,8 @@ int p_str(va_list list)
 
 	char *str = va_arg(list, char *);
 
+	if (str == NULL)
+		return ('\0');
 	for (c = 0; str[c] != '\0'; c++)
 	{
 		ch_c++;
