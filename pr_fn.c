@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
 * p_char - Print the char function
 * @list: list
@@ -102,7 +101,8 @@ int p_bin(va_list list)
 			count = 0;
 			while (var > 0)
 			{
-				value[count] = ((var % 2) + 48), ch_c++;
+				value[count] = ((var % 2) + 48);
+				ch_c++;
 				var = var / 2;
 			}
 			while (count != 0)

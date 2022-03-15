@@ -110,6 +110,45 @@ int p_uns(va_list list)
 */
 int p_oct(va_list list)
 {
-	(void)list; /*TESTING!!! REMOVE TO DEPLOY FUNCTION*/
-	return (0);
+    char *value;
+    unsigned int var;
+    unsigned int num = va_arg(list, int);
+    int ch_c, count;
+
+    if (num == 0)
+    {
+        _putchar('0');
+        return (1);
+    }
+    var = num;
+    if (var != 0)
+    {
+        ch_c = 0;
+        while (var > 0)
+        {
+            var = var / 8;
+            ch_c++;
+        }
+        var = num;
+        value = malloc((sizeof(char) * ch_c) + 1);
+        if (value)
+        {
+            count = 0;
+            while (var > 0)
+            {
+                value[count] = ((var % 8) + 48);
+                ch_c++;
+                var = var / 8;
+            }
+            while (count != 0)
+            {
+                count--;
+                _putchar(value[count]);
+            }
+        }
+        else
+            return (-1);
+	}
+	free(value);
+	return (ch_c);
 }
