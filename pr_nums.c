@@ -1,7 +1,8 @@
 #include "main.h"
+int _pwr(int,int);
 
 /**
- * pr_int_rec
+ * pr_int - print integer
  */
 int p_int(va_list list)
 {
@@ -48,4 +49,19 @@ int p_int(va_list list)
 	cn++;
 
 	return (cn);
+}
+
+
+/**
+ *  * _pwr - pwer
+ *   * @a: a
+ *    * @b: b
+ *     */
+int _pwr(int a, int b)
+{
+	    if (b == 0)
+			        return (1);
+
+		    else
+				        return (_pwr(a, b - 1)) * a;
 }

@@ -10,8 +10,8 @@ int (*pr_selector(char id))(va_list)
 	comp array_f[] = {
 		{"c", p_char},
 		{"s", p_str},
-		{"i", p_int},
-		{"d", p_int},
+		/*{"i", p_int},
+		{"d", p_int},*/
 		{"%", p_mod},
 		{"\0", NULL}
 	};
