@@ -179,6 +179,7 @@ int p_bin(va_list list)
         while (var > 0)
         {
             var = var / 2;
+			count++;
         }
         var = num;
         value = malloc(sizeof(char) * ch_c);
