@@ -119,8 +119,8 @@ int p_oct(va_list list)
             while (var > 0)
             {
                 value[count] = ((var % 8) + 48);
-                count++;
                 var = var / 8;
+				count++;
             }
 			count--;
             while (count != 0)
@@ -164,6 +164,7 @@ int p_bin(va_list list)
         while (var > 0)
         {
             var = var / 2;
+			count++;
         }
         var = num;
         value = malloc(sizeof(char) * ch_c);
