@@ -114,7 +114,7 @@ int p_bin(va_list list)
 }
 
 /**
-* p_uns - Print unsigned int characters
+* p_uns - Print octagonal characters
 * @list: list
 * Return: Number of characters printed
 */
