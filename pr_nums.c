@@ -3,7 +3,8 @@
 /**
  * p_int - print integer
  * @list: list
- * return: count
+ *
+ * Return: count
  */
 int p_int(va_list list)
 {
@@ -53,6 +54,7 @@ int p_int(va_list list)
  * _pwr - pwer
  * @a: a
  * @b: b
+ * Return: result
  */
 int _pwr(int a, int b)
 {
@@ -64,7 +66,7 @@ int _pwr(int a, int b)
 }
 
 /**
- * pr_bin - Print a integer number
+ * p_bin - Print a integer number
  * @list: list
  * Return: Number the characters printed
  */
