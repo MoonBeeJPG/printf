@@ -1,11 +1,9 @@
 #include "main.h"
-
 /**
- * p_int - print integer
- * @list: list
- *
- * Return: count
- */
+* p_int - print integer
+* @list: list
+* Return: count
+*/
 int p_int(va_list list)
 {
 	unsigned int i, i_cp;
@@ -51,11 +49,11 @@ int p_int(va_list list)
 
 
 /**
- * _pwr - pwer
- * @a: a
- * @b: b
- * Return: result
- */
+* _pwr - pwer
+* @a: a
+* @b: b
+* Return: result
+*/
 int _pwr(int a, int b)
 {
 	if (b == 0)
@@ -66,10 +64,10 @@ int _pwr(int a, int b)
 }
 
 /**
- * p_bin - Print a integer number
- * @list: list
- * Return: Number the characters printed
- */
+* p_bin - Print a integer number
+* @list: list
+* Return: Number the characters printed
+*/
 int p_bin(va_list list)
 {
 	char *value;
@@ -96,8 +94,7 @@ int p_bin(va_list list)
 		{
 			while (var > 0)
 			{
-				value[count] = ((var % 2) + 48);
-				ch_c++;
+				value[count] = ((var % 2) + 48), ch_c++;
 				var = var / 2;
 			}
 			while (count != 0)
