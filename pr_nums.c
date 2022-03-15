@@ -47,22 +47,7 @@ int p_int(va_list list)
 	return (cn);
 }
 
-
-/**
-* _pwr - pwer
-* @a: a
-* @b: b
-* Return: result
-*/
-int _pwr(int a, int b)
-{
-	if (b == 0)
-		return (1);
-
-	else
-		return ((_pwr(a, b - 1)) * a);
-}
-/**
+/*
 * p_uns - Print octagonal characters
 * @list: list
 * Return: Number of characters printed
