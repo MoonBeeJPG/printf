@@ -25,6 +25,8 @@ int p_str(va_list list);
 int p_int(va_list list);
 int p_mod(va_list list);
 int p_unk(va_list list);
+int p_uns(va_list list);
+int p_oct(va_list list);
 int p_bin(va_list list);
 char *rev_str(char *);
 char *itos(int);
