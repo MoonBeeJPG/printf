@@ -11,8 +11,16 @@ int (*pr_selector(char id))(va_list)
 		{"c", p_char},
 		{"s", p_str},
 		{"i", p_int},
+		{"x", p_int},
+		{"X", p_int},
 		{"%", p_mod},
+<<<<<<< HEAD
 		/*{"b", p_bin},*/
+=======
+		{"b", p_bin},
+		{"u", p_uns},
+		{"o", p_oct},
+>>>>>>> f2611c5182139568ca7eef37bdf06a5f6626b01b
 		{"\0", NULL}
 	};
 
