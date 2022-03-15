@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-void main()
+int main(void)
 {
 	printf("START OF TEST\n");
 	
@@ -13,7 +13,7 @@ void main()
 	int b = 4312;
 	int alen, elen;
 	printf("Expected   : %i\n", 1111011);
-	_printf("Actual     : %b\n", 123);
+	_printf("Actual     : %b\n", 0);
 	elen = printf("Expected   : %lu\n", 1000011011000);
 	alen = _printf("Actual     : %b\n", b);
 	printf("Expected   : %i\n", elen);
@@ -92,20 +92,6 @@ void main()
 	printf("Expected   : %o\n", 0);
 	_printf("Actual     : %o\n", 0);
 
-        //pointers
-        printf("=====================\n");
-        printf("*****POINTERS*****\n");
-        printf("=====================\n");
-        void *vp = (void *)0x7ffe637541f0;
-        alen = printf("Expected   : %p\n", vp);
-        elen = _printf("Actual     : %p\n", vp);
-	printf("Expected   : %i\n", elen);
-	_printf("Actual     : %i\n", alen);
-        vp = NULL;
-        printf("Expected   : %p\n", vp);
-        _printf("Actual     : %p\n", vp);
-	
-
 	//rot13
 	printf("=====================\n");
 	printf("*****ROT13*****\n");
@@ -118,19 +104,5 @@ void main()
 	printf("Expected   : Gur dhvpx oebja sbk whzcf bire 13 ynml qbtf.\n");
 	_printf("Actual     : %R\n", rot);
 
-	//bigS
-	printf("=====================\n");
-	printf("*****bigS*****\n");
-	printf("=====================\n");
-	int len = 0;
-	len = _printf("%S", "Holberton\nSchool");
-	printf("\n");
-	_printf("len = %i\n", len);
-	len = _printf("%S", "holber\ton");
-	printf("\n");
-	_printf("len = %i\n", len);
-	len = _printf("%S", NULL);
-	printf("\n");
-	_printf("len = %i\n", len);
-	return;
+	return (0);
 }

@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
 * p_char - Print the char function
 * @list: list
@@ -76,18 +77,19 @@ int p_unk(va_list list)
 int p_bin(va_list list)
 {
 	char *value;
-	unsigned int var = 0, num = va_arg(list, int);
-	int ch_c = 0, count = 0;
+	unsigned int var;
+	unsigned int num = va_arg(list, int);
+	int ch_c, count;
 
 	if (num == 0)
 	{
-		_putchar(0);
+		_putchar('0');
 		return (1);
 	}
-	num = var;
-
-	while (var != 0)
+	var = num;
+	if (var != 0)
 	{
+		ch_c = 0;
 		while (var > 0)
 		{
 			var = var / 2;
@@ -95,13 +97,13 @@ int p_bin(va_list list)
 		}
 		var = num;
 		value = malloc((sizeof(char) * ch_c) + 1);
-
-		if (!value)
+		if (value)
 		{
+			count = 0;
 			while (var > 0)
 			{
-			value[count] = ((var % 2) + 48), ch_c++;
-			var = var / 2;
+				value[count] = ((var % 2) + 48), ch_c++;
+				var = var / 2;
 			}
 			while (count != 0)
 			{
