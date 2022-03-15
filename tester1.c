@@ -13,7 +13,7 @@ int main(void)
 	int b = 4312;
 	int alen, elen;
 	printf("Expected   : %i\n", 1111011);
-	_printf("Actual     : %b\n", 123);
+	_printf("Actual     : %b\n", 0);
 	elen = printf("Expected   : %lu\n", 1000011011000);
 	alen = _printf("Actual     : %b\n", b);
 	printf("Expected   : %i\n", elen);
