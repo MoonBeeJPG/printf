@@ -91,16 +91,16 @@ int p_bin(va_list list)
 		while (var > 0)
 		{
 			var = var / 2;
+			count++;
 		}
 		var = num;
-		value = malloc(sizeof(char) * ch_c);
+		value = malloc(sizeof(char) * count);
 		if (value)
 		{
 			while (var > 0)
 			{
 				value[count] = ((var % 2) + '0');
 				var = var / 2;
-				count++;
 			}
 			count--;
 			while (count >= 0)
