@@ -5,7 +5,6 @@
 #include <math.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include <limits.h>
 int _printf(const char *format, ...);
 int _putchar(char c);
 

@@ -6,21 +6,27 @@
  */
 int p_int(va_list list)
 {
-	int i = va_arg(list, int);
+	int num = va_arg(list, int);
+	unsigned int i, i_cp;
 	int cn = 0;
-	int dgts = 0, n, i_cp = i;
+	int dgts = 0, n;
+	
 
-	if (i < 0)
+	if (num < 0)
 	{
 		_putchar('-');
 		cn++;
-		i = 0 - i;
+		i = (unsigned int) (0 - num);
 	}
-	else if (i == 0)
+	else if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
+	else
+		i = (unsigned int)num;
+
+	i_cp = i;
 
 	while (i_cp != 0)
 	{

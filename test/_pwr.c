@@ -1,13 +1,15 @@
 #include "main.h"
 
+/**
+ * _pwr - power
+ * @a: a
+ * @b: b
+ */
 int _pwr(int a, int b)
 {
-	int n;
-	int x = a;
+	if (b == 0)
+		return (1);
 
-	for (n = 1; n < b ; n++)
-	{
-		x = x * a;
-	}
-	return (x);
+	else
+		return (_pwr(a, b - 1)) * a;
 }
