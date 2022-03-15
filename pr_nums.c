@@ -160,8 +160,8 @@ int p_oct(va_list list)
 int p_rot(va_list list)
 {
 	char *value;
-	int i;
-	int ch_c;
+	int i = 0;
+	int ch_c = 0;
 
 	value = va_arg(list, char *);
 
