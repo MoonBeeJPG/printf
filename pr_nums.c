@@ -111,19 +111,24 @@ int p_oct(va_list list)
         while (var > 0)
         {
             var = var / 8;
+			count++;
         }
         var = num;
-        value = malloc((sizeof(char) * ch_c) + 1);
+        value = malloc(sizeof(char) * count);
         if (value)
         {
+			count = 0;
+
             while (var > 0)
             {
                 value[count] = ((var % 8) + 48);
                 var = var / 8;
 				count++;
             }
+
 			count--;
-            while (count != 0)
+
+            while (count >= 0)
             {
                 ch_c++;
                 _putchar(value[count]);
