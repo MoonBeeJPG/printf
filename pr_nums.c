@@ -159,15 +159,9 @@ int p_oct(va_list list)
 int p_bin(va_list list)
 {
     char *value;
-    unsigned int var, num;
-    int in = va_arg(list, int);
+    unsigned int var, num = va_arg(list, int);
     int ch_c = 0, count = 0;
 
-    if (in < 0)
-    {
-        return (-1);
-    }
-    num = (unsigned int)in;
     if (num == 0)
     {
         _putchar('0');
@@ -179,7 +173,6 @@ int p_bin(va_list list)
         while (var > 0)
         {
             var = var / 2;
-			count++;
         }
         var = num;
         value = malloc(sizeof(char) * ch_c);
@@ -192,7 +185,7 @@ int p_bin(va_list list)
                 count++;
             }
             count--;
-			while (count != 0)
+			while (count < 0)
             {
                 ch_c++;
                 _putchar(value[count]);
