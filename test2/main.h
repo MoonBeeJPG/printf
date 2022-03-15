@@ -29,7 +29,8 @@ int p_unk(va_list list);
 int p_uns(va_list list);
 int p_oct(va_list list);
 int p_bin(va_list list);
-int _pwr(int,int);
+int p_rot(va_list list);
+int _pwr(int, int);
 char *rev_str(char *);
 char *itos(int);
 #endif

@@ -1,0 +1,32 @@
+NAME
+       _printf - format and print data
+
+SYNOPSIS
+       _printf FORMAT [ARGUMENT]...
+
+DESCRIPTION
+		Print arguments based on FORMAT. FORMAT is both a string to be printed
+		and the IDENTIFIERS to call the ARGUMENT(s).
+
+		Valid IDENTIFIERS
+
+		%%		prints a single %
+
+		%c		prints a char
+
+		%s		prints a string
+
+		%i		prints an integer
+
+		%b		prints an int formatted into binary
+
+		%x		formats into hex, lowercase
+
+		%X		formats into hex, UPPERCASE
+
+		%o		formats int into octal
+
+		%S		prints a string with non-ascii written as hex
+		
+AUTHOR
+       Written by Agustina Hernandez & Mauricio Heller.

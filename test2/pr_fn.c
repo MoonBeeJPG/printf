@@ -38,12 +38,11 @@ int p_str(va_list list)
 	}
 	return (ch_c);
 }
-
 /**
- * p_mod - Print % as identifier
- * @list: list
- * Return: Number of characters printed
- */
+* p_mod - Print % as identifier
+* @list: list
+* Return: Number of characters printed
+*/
 int p_mod(va_list list)
 {
 	int ch_c = 0;

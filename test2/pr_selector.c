@@ -18,6 +18,7 @@ int (*pr_selector(char id))(va_list)
 		{"b", p_bin},
 		{"u", p_uns},
 		{"o", p_oct},
+		{"R", p_rot},
 		{"\0", NULL}
 	};
 
