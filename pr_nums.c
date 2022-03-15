@@ -158,7 +158,6 @@ int p_bin(va_list list)
         while (var > 0)
         {
             var = var / 2;
-			count++;
         }
 
         var = num;
@@ -173,10 +172,15 @@ int p_bin(va_list list)
                 var = var / 2;
 				count++;
             }
+<<<<<<< HEAD
 
 			count--;
  
 			while (count >= 0)
+=======
+            count--;
+			while (count < 0)
+>>>>>>> 6475b2e34a2361abf17129c1a5dbfcc419406817
             {
                 ch_c++;
                 _putchar(value[count]);
