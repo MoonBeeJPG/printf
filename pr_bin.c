@@ -7,7 +7,8 @@
 int p_bin(va_list list)
 {
     char *value;
-    int var = 0, ch_c = 0, count = 0;
+    unsigned int var = 0;
+	int ch_c = 0, count = 0;
     unsigned int num = va_arg(list, int);
 
     if (num == 0)
@@ -37,7 +38,7 @@ int p_bin(va_list list)
             while (count != 0)
             {
                 count--;
-                _putchar (value[count]);
+                _putchar(value[count]);
             }
         }
         else
