@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * pr_int - Print a integer number
+ * pr_bin - Print a integer number
  * @list: list
  * Return: Number the characters printed
  */
