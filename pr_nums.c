@@ -153,41 +153,62 @@ int p_oct(va_list list)
 	return (ch_c);
 }
 /**
-* p_rot - print rot-13
+* p_bin - print the binary
 * @list: list
-* Return: Number of characters printed
+* Return: Number of printed characters
 */
-int p_rot(va_list list)
+int p_bin(va_list list)
 {
-	char *value;
-	int i = 0;
-	int ch_c = 0;
+    char *value;
+    unsigned int var, num;
+    int in = va_arg(list, int);
+    int ch_c = 0, count = 0;
 
-	value = va_arg(list, char *);
-
-	if (value == NULL)
-		return (-1);
-	if (value[i] != '\0')
-	{
-		if ((value[i] >= 'a' && value[i] <= 'z') || 
-			(value[i] >= 'A' && value[i] <= 'Z'))
-		{
-			if ((value[i] >= 'n' && value[i] <= 'z') ||
-				(value[i] >= 'N' && value[i] <= 'Z'))
-			{
-				ch_c = ch_c + _putchar(value[i] - 13);
-			}
-			else 
-			{
-				ch_c = ch_c + _putchar(value[i] + 13);
-			}
-		}
-		else 
-		{
-			ch_c = ch_c + _putchar(value[i]);
-		}
-		i++;
-	}
-	return (ch_c);
+    if (in < 0)
+    {
+        return (-1);
+    }
+    num = (unsigned int)in;
+    if (num == 0)
+    {
+        _putchar('0');
+        return (1);
+    }
+    var = num;
+    if (var != 0)
+    {
+        while (var > 0)
+        {
+            var = var / 2;
+        }
+        var = num;
+        value = malloc(sizeof(char) * ch_c);
+        if (value)
+        {
+            while (var > 0)
+            {
+                value[count] = ((var % 2) + '0');
+                var = var / 2;
+                count++;
+            }
+            count--;
+            while (count >= 0)
+			 {
+                value[count] = ((var % 2) + '0');
+                var = var / 2;
+                count++;
+            }
+            count--;
+            while (count >= 0)
+            {
+                ch_c++;
+                _putchar(value[count]);
+                count--;
+            }
+        }
+        else
+            return (-1);
+    }
+    free(value);
+    return (ch_c);
 }
-
