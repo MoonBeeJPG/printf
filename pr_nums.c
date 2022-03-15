@@ -1,15 +1,14 @@
 #include "main.h"
 
 /**
- * pr_int - print integer
+ * p_int - print integer
+ * @list: list
+ * return: count
  */
 int p_int(va_list list)
 {
-	int num = va_arg(list, int);
 	unsigned int i, i_cp;
-	int cn = 0;
-	int dgts = 0, n;
-	
+	int dgts = 0, n, cn = 0, num = va_arg(list, int);
 
 	if (num < 0)
 	{
@@ -35,15 +34,14 @@ int p_int(va_list list)
 
 	dgts--;
 
-
-	for(; dgts > 0; dgts--)
+	for (; dgts > 0; dgts--)
 	{
 		n = i / _pwr(10, dgts);
 		_putchar (n + '0');
 		cn++;
 		i = i % _pwr(10, dgts);
 	}
-	
+
 	_putchar((i % 10) + '0');
 	cn++;
 
@@ -52,17 +50,17 @@ int p_int(va_list list)
 
 
 /**
- *  * _pwr - pwer
- *   * @a: a
- *    * @b: b
- *     */
+ * _pwr - pwer
+ * @a: a
+ * @b: b
+ */
 int _pwr(int a, int b)
 {
-	    if (b == 0)
-			        return (1);
+	if (b == 0)
+		return (1);
 
-		    else
-				        return (_pwr(a, b - 1)) * a;
+	else
+		return ((_pwr(a, b - 1)) * a);
 }
 
 /**
@@ -72,46 +70,45 @@ int _pwr(int a, int b)
  */
 int p_bin(va_list list)
 {
-    char *value;
-    unsigned int var = 0;
+	char *value;
+	unsigned int var = 0, num = va_arg(list, int);
 	int ch_c = 0, count = 0;
-    unsigned int num = va_arg(list, int);
 
-    if (num == 0)
-    {
-        _putchar(0);
-        return (1);
-    }
-    num = var;
+	if (num == 0)
+	{
+		_putchar(0);
+		return (1);
+	}
+	num = var;
 
-    while (var != 0)
-    {
-        while (var > 0)
-        {
-            var = var / 2;
-            ch_c++;
-        }
-        var = num;
-        value = malloc((sizeof(char) * ch_c) +1);
-        if (!value)
-        {
-            while (var > 0)
-            {
-                value[count] = ((var % 2) + 48);
-                ch_c++;
-                var = var / 2;
-            }
-            while (count != 0)
-            {
-                count--;
-                _putchar(value[count]);
-            }
-        }
-        else
-            return (-1);
-    }
-    free(value);
-    return (ch_c);
+	while (var != 0)
+	{
+		while (var > 0)
+		{
+			var = var / 2;
+			ch_c++;
+		}
+		var = num;
+		value = malloc((sizeof(char) * ch_c) + 1);
+		if (!value)
+		{
+			while (var > 0)
+			{
+				value[count] = ((var % 2) + 48);
+				ch_c++;
+				var = var / 2;
+			}
+			while (count != 0)
+			{
+				count--;
+				_putchar(value[count]);
+			}
+		}
+		else
+			return (-1);
+	}
+	free(value);
+	return (ch_c);
 }
 
 /**
@@ -122,38 +119,37 @@ int p_bin(va_list list)
 int p_uns(va_list list)
 {
 	char *value;
-    unsigned int var = 0;
-    int ch_c = 0, count = 0;
-    unsigned int num = va_arg(list, int);
+	unsigned int var = 0, num = va_arg(list, int);
+	int ch_c = 0, count = 0;
 
-    while (num == 0)
-    {
-        _putchar(0);
-        return (1);
-    }
-    num = var;
+	while (num == 0)
+	{
+		_putchar(0);
+		return (1);
+	}
+	num = var;
 
-    while (var != 0)
-    {
-        while (var > 0)
-        {
-            var = var / 2;
-            ch_c++;
-        }
-        var = num;
-        value = malloc((sizeof(char) * ch_c) +1);
-        if (!value)
-        {
-            while (var > 0)
-            {
-                value[count] = ((var % 2) + 48);
-                ch_c++;
-                var = var / 2;
-            }
-            while (count != 0)
-            {
-                count--;
-                _putchar(value[count]);
+	while (var != 0)
+	{
+		while (var > 0)
+		{
+			var = var / 2;
+			ch_c++;
+		}
+		var = num;
+		value = malloc((sizeof(char) * ch_c) + 1);
+		if (!value)
+		{
+			while (var > 0)
+			{
+				value[count] = ((var % 2) + 48);
+				ch_c++;
+				var = var / 2;
+			}
+			while (count != 0)
+			{
+				count--;
+				_putchar(value[count]);
 			}
 		}
 		else
@@ -168,9 +164,8 @@ int p_uns(va_list list)
 * @list: list
 * Return: Number of characters printed
 */
-
 int p_oct(va_list list)
 {
-	(void)list;
-	return(0);
+	(void)list; /*TESTING!!! REMOVE TO DEPLOY FUNCTION*/
+	return (0);
 }
