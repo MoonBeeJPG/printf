@@ -113,7 +113,7 @@ int p_oct(va_list list)
     char *value;
     unsigned int var;
     unsigned int num = va_arg(list, int);
-    int ch_c, count;
+    int ch_c = 0, count = 0;
 
     if (num == 0)
     {
@@ -123,27 +123,26 @@ int p_oct(va_list list)
     var = num;
     if (var != 0)
     {
-        ch_c = 0;
         while (var > 0)
         {
             var = var / 8;
-            ch_c++;
         }
         var = num;
         value = malloc((sizeof(char) * ch_c) + 1);
         if (value)
         {
-            count = 0;
             while (var > 0)
             {
                 value[count] = ((var % 8) + 48);
-                ch_c++;
+                count++;
                 var = var / 8;
             }
+			count--;
             while (count != 0)
             {
-                count--;
+                ch_c++;
                 _putchar(value[count]);
+				count--;
             }
         }
         else
@@ -189,17 +188,10 @@ int p_bin(va_list list)
             {
                 value[count] = ((var % 2) + '0');
                 var = var / 2;
-                count++;
+                ch_c++;
             }
             count--;
-            while (count >= 0)
-			 {
-                value[count] = ((var % 2) + '0');
-                var = var / 2;
-                count++;
-            }
-            count--;
-            while (count >= 0)
+			while (count != 0)
             {
                 ch_c++;
                 _putchar(value[count]);
