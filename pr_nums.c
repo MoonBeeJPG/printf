@@ -134,8 +134,8 @@ int p_oct(va_list list)
             while (var > 0)
             {
                 value[count] = ((var % 8) + 48);
-                count++;
                 var = var / 8;
+				count++;
             }
 			count--;
             while (count != 0)
