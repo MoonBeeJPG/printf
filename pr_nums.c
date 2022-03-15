@@ -168,7 +168,9 @@ int p_uns(va_list list)
 * @list: list
 * Return: Number of characters printed
 */
+
 int p_oct(va_list list)
 {
-
+	(void)list;
+	return(0);
 }
