@@ -120,45 +120,38 @@ int p_bin(va_list list)
 */
 int p_uns(va_list list)
 {
-	char *value;
-	unsigned int var = 0, num = va_arg(list, int);
-	int ch_c = 0, count = 0;
+	unsigned int i_cp;
+	int dgts = 0, n, cn = 0;
+	unsigned int i = (unsigned int)va_arg(list, long int);
 
-	while (num == 0)
+	if (i == 0)
 	{
-		_putchar(0);
+		_putchar('0');
 		return (1);
 	}
-	num = var;
 
-	while (var != 0)
+	i_cp = i;
+
+	while (i_cp != 0)
 	{
-		while (var > 0)
-		{
-			var = var / 2;
-			ch_c++;
-		}
-		var = num;
-		value = malloc((sizeof(char) * ch_c) + 1);
-		if (!value)
-		{
-			while (var > 0)
-			{
-				value[count] = ((var % 2) + 48);
-				ch_c++;
-				var = var / 2;
-			}
-			while (count != 0)
-			{
-				count--;
-				_putchar(value[count]);
-			}
-		}
-		else
-			return (-1);
+		i_cp /= 10;
+		dgts++;
 	}
-	free(value);
-	return (ch_c);
+
+	dgts--;
+
+	for (; dgts > 0; dgts--)
+	{
+		n = i / _pwr(10, dgts);
+		_putchar (n + '0');
+		cn++;
+		i = i % _pwr(10, dgts);
+	}
+
+	_putchar((i % 10) + '0');
+	cn++;
+
+	return (cn);
 }
 
 /**
