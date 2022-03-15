@@ -76,10 +76,15 @@ int p_unk(va_list list)
 int p_bin(va_list list)
 {
 	char *value;
-	unsigned int var;
-	unsigned int num = va_arg(list, int);
+	unsigned int var, num;
+	int in = va_arg(list, int);
 	int ch_c = 0, count = 0;
-
+	
+	if (in < 0)
+	{
+		return (-1);
+	}
+	num = (unsigned int)in;
 	if (num == 0)
 	{
 		_putchar('0');
