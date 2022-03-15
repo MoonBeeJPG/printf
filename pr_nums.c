@@ -188,7 +188,7 @@ int p_bin(va_list list)
             {
                 value[count] = ((var % 2) + '0');
                 var = var / 2;
-                ch_c++;
+                count++;
             }
             count--;
 			while (count != 0)
