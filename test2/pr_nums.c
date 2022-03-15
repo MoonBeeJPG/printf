@@ -1,5 +1,4 @@
 #include "main.h"
-int _pwr(int,int);
 
 /**
  * pr_int - print integer
