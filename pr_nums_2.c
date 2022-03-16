@@ -11,7 +11,7 @@ int p_hex(va_list list)
 	unsigned int var, num = va_arg(list, int);
 	int ch_c = 0, count = 0, x = 0;
 
-    if (num == 0)
+	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
@@ -38,7 +38,7 @@ int p_hex(va_list list)
 		}
 		count--;
 
-		for (;count >= 0; count--)
+		for (; count >= 0; count--)
 		{
 			ch_c++;
 			_putchar(value[count]);
@@ -59,7 +59,7 @@ int p_HEX(va_list list)
 	unsigned int var, num = va_arg(list, int);
 	int ch_c = 0, count = 0, x = 0;
 
-    if (num == 0)
+	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
@@ -86,7 +86,7 @@ int p_HEX(va_list list)
 		}
 		count--;
 
-		for (;count >= 0; count--)
+		for (; count >= 0; count--)
 		{
 			ch_c++;
 			_putchar(value[count]);

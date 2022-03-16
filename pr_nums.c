@@ -47,11 +47,11 @@ int p_int(va_list list)
 	return (cn);
 }
 
-/*
-* p_uns - Print octagonal characters
-* @list: list
-* Return: Number of characters printed
-*/
+/**
+ * p_uns - Print octagonal characters
+ * @list: list
+ * Return: Number of characters printed
+ */
 int p_uns(va_list list)
 {
 	unsigned int i_cp;
@@ -95,52 +95,45 @@ int p_uns(va_list list)
 */
 int p_oct(va_list list)
 {
-    char *value;
-    unsigned int var;
-    unsigned int num = va_arg(list, int);
-    int ch_c = 0, count = 0;
+	char *value;
+	unsigned int var;
+	unsigned int num = va_arg(list, int);
+	int ch_c = 0, count = 0;
 
-    if (num == 0)
-    {
-        _putchar('0');
-        return (1);
-    }
-    var = num;
-    if (var != 0)
-    {
-        while (var > 0)
-        {
-            var = var / 8;
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	var = num;
+	if (var != 0)
+	{
+		for (; var > 0; count++)
+			var = var / 8;
+
+		var = num;
+		value = malloc(sizeof(char) * count);
+		if (!value)
+			return (-1);
+
+		count = 0;
+		while (var > 0)
+		{
+			value[count] = ((var % 8) + 48);
+			var = var / 8;
 			count++;
-        }
-        var = num;
-        value = malloc(sizeof(char) * count);
-        if (value)
-        {
-			count = 0;
-
-            while (var > 0)
-            {
-                value[count] = ((var % 8) + 48);
-                var = var / 8;
-				count++;
-            }
-
-			count--;
-
-            while (count >= 0)
-            {
-                ch_c++;
-                _putchar(value[count]);
-				count--;
-            }
-        }
-        else
-            return (-1);
+		}
+		count--;
+		for (; count >= 0; count--)
+		{
+			ch_c++;
+			_putchar(value[count]);
+		}
 	}
 	free(value);
 	return (ch_c);
 }
+
 /**
 * p_bin - print the binary
 * @list: list
@@ -148,48 +141,41 @@ int p_oct(va_list list)
 */
 int p_bin(va_list list)
 {
-    char *value;
-    unsigned int var, num = va_arg(list, int);
-    int ch_c = 0, count = 0;
+	char *value;
+	unsigned int var, num = va_arg(list, int);
+	int ch_c = 0, count = 0;
 
-    if (num == 0)
-    {
-        _putchar('0');
-        return (1);
-    }
-    var = num;
-    if (var != 0)
-    {
-        while (var > 0)
-        {
-            var = var / 2;
-        }
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	var = num;
+	if (var != 0)
+	{
+		for (; var > 0; count++)
+			var = var / 2;
 
-        var = num;
-        value = malloc(sizeof(char) * count);
-        if (value)
-        {
-			count = 0;
+		var = num;
+		value = malloc(sizeof(char) * count);
+		if (!value)
+			return (-1);
 
-            while (var > 0)
-            {
-                value[count] = ((var % 2) + '0');
-                var = var / 2;
-				count++;
-            }
+		for (count = 0; var > 0; count++)
+		{
+			value[count] = ((var % 2) + '0');
+			var = var / 2;
+			count++;
+		}
 
-			count--;
- 
-			while (count >= 0)
-            {
-                ch_c++;
-                _putchar(value[count]);
-                count--;
-            }
-        }
-        else
-            return (-1);
-    }
-    free(value);
-    return (ch_c);
+		count--;
+
+		for (; count >= 0; count--)
+		{
+			ch_c++;
+			_putchar(value[count]);
+		}
+	}
+	free(value);
+	return (ch_c);
 }

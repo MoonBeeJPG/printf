@@ -31,7 +31,7 @@ int p_unk(va_list list);
 int p_uns(va_list list);
 int p_oct(va_list list);
 int p_bin(va_list list);
-int p_rot(va_list list);
+/*int p_rot(va_list list);*/
 int p_hex(va_list list);
 int _pwr(int, int);
 #endif

@@ -27,6 +27,6 @@ DESCRIPTION
 		%o		formats int into octal
 
 		%S		prints a string with non-ascii written as hex
-		
+
 AUTHOR
        Written by Agustina Hernandez & Mauricio Heller.

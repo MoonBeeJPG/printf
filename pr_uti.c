@@ -8,9 +8,9 @@
 */
 int _pwr(int a, int b)
 {
-    if (b == 0)
-        return (1);
+	if (b == 0)
+		return (1);
 
-    else
-        return ((_pwr(a, b - 1)) * a);
+	else
+		return ((_pwr(a, b - 1)) * a);
 }
