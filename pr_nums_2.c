@@ -7,55 +7,91 @@
 */
 int p_hex(va_list list)
 {
-    char *value;
-    unsigned int var, num = va_arg(list, int);
-    int ch_c = 0, count = 0;
+	char *value;
+	unsigned int var, num = va_arg(list, int);
+	int ch_c = 0, count = 0, x = 0;
 
     if (num == 0)
-    {
-        _putchar('0');
-        return (1);
-    }
-    var = num;
-    if (var != 0)
-    {
-        while (var > 0)
-        {
-            var = var / 16;
-			count++;
-        }
+	{
+		_putchar('0');
+		return (1);
+	}
+	var = num;
+	if (var != 0)
+	{
+		for (; var > 0; count++)
+			var = var / 16;
 
-        var = num;
-        value = malloc(sizeof(char) * count);
-        if (value)
-        {
-			count = 0;
+		var = num;
+		value = malloc(sizeof(char) * count);
+		if (!value)
+			return (-1);
 
-            while (var > 0)
-            {
-				if (value[count] > 9)
-                	value[count] = ((var % 16) - 10 + 'a');
+		for (count = 0; var > 0; count++, var /= 16)
+		{
+			x = var % 16;
+			if (x > 9)
+				value[count] = ((x - 10) + 'a');
 
-				else
-                	value[count] = ((var % 16) + '0');
+			else
+				value[count] = ((var % 16) + '0');
+		}
+		count--;
 
-                var = var / 16;
-				count++;
-            }
+		for (;count >= 0; count--)
+		{
+			ch_c++;
+			_putchar(value[count]);
+		}
+	}
+	free(value);
+	return (ch_c);
+}
 
-			count--;
- 
-			while (count >= 0)
-            {
-                ch_c++;
-                _putchar(value[count]);
-                count--;
-            }
-        }
-        else
-            return (-1);
-    }
+/**
+* p_HEX - print formatted in HEX (Uppercase)
+* @list: list
+* Return: Number of printed characters
+*/
+int p_HEX(va_list list)
+{
+	char *value;
+	unsigned int var, num = va_arg(list, int);
+	int ch_c = 0, count = 0, x = 0;
 
-    free(value);
+    if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	var = num;
+	if (var != 0)
+	{
+		for (; var > 0; count++)
+			var = var / 16;
+
+		var = num;
+		value = malloc(sizeof(char) * count);
+		if (!value)
+			return (-1);
+
+		for (count = 0; var > 0; count++, var /= 16)
+		{
+			x = var % 16;
+			if (x > 9)
+				value[count] = ((x - 10) + 'A');
+
+			else
+				value[count] = ((var % 16) + '0');
+		}
+		count--;
+
+		for (;count >= 0; count--)
+		{
+			ch_c++;
+			_putchar(value[count]);
+		}
+	}
+	free(value);
 	return (ch_c);
 }
