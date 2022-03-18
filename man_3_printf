@@ -8,6 +8,8 @@ DESCRIPTION
 		Print arguments based on FORMAT. FORMAT is both a string to be printed
 		and the IDENTIFIERS to call the ARGUMENT(s).
 
+		Returns the number of characters printed
+
 		Valid IDENTIFIERS
 
 		%%		prints a single %
